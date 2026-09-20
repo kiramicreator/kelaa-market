@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f3eee4;
+  --color-surface: #faf7f1;
+  --color-fg: #1b1914;
+  --color-muted: #6e675d;
+  --color-primary: #1f5c4e;
+  --color-primary-fg: #f4f1ea;
+  --color-border: #ddd6c8;
+  --color-stone: #c4b8a5;
+  --color-danger: #8f3d32;
+  --color-ok: #2f6b4f;
+  --color-warn: #8a6a32;
+  --font-sans: "IBM Plex Sans Arabic", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Amiri", "IBM Plex Sans Arabic", serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+  p {
+    text-wrap: pretty;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.zellij {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle at 20% 0%, color-mix(in oklab, var(--color-primary) 10%, transparent), transparent 42%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'><path fill='none' stroke='%231f5c4e' stroke-opacity='0.08' stroke-width='1.2' d='M36 4 L68 36 L36 68 L4 36 Z M36 16 L56 36 L36 56 L16 36 Z'/></svg>");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
